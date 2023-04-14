@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+/* BODY */
+
+body {
+  padding-top: 72px;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* HEADER */
+
+.nav {
+  background: linear-gradient(180deg, #163a16, #739c73);
+}
+
+.logo-header {
+  height: 40px;
+}
+
+/* SELECTOR DE PAGINA */
+
+.selector-de-pagina i {
+  font-size: 2rem;
+}
+
+/* ----------------- footer -------------------- */
+
+footer {
+  height: 100px;
+  background: linear-gradient(180deg, #5c072e, #8f4165);
+}
+
+.footer-icons {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.footer-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* ------------------ pagina details -------------------- */
