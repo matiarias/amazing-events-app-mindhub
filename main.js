@@ -1,4 +1,4 @@
-let containerHome = document.querySelector(".container-cards");
+let containerGrid = document.querySelector(".container-grid");
 
 const dataUrl = "https://mindhub-xj03.onrender.com/api/amazing";
 
@@ -43,8 +43,9 @@ const cardsHome = (array) => {
       <span class="text-dark fw-bold">Price: ${events[i].price}</span>
       <a href="#" class="btn btn-success">Details</a>
     </div>`;
+
+      containerGrid.appendChild(cardContainer);
       cardContainer.appendChild(card);
-      containerHome.appendChild(cardContainer);
     }
     // -------------------------- Cards Past Events --------------------------
   } else if (document.URL.includes("pastEvents.html")) {
@@ -72,8 +73,9 @@ const cardsHome = (array) => {
         <span class="text-dark fw-bold">Price: ${events[i].price}</span>
         <a href="#" class="btn btn-success">Details</a>
         </div>`;
+
+        containerGrid.appendChild(cardContainer);
         cardContainer.appendChild(card);
-        containerHome.appendChild(cardContainer);
       }
     }
 
@@ -81,7 +83,6 @@ const cardsHome = (array) => {
   } else if (document.URL.includes("upcomingEvents.html")) {
     for (let i = 0; i < events.length; i++) {
       if (currentDate <= events[i].date) {
-        console.log("entreee");
         let cardContainer = document.createElement("div");
         cardContainer.className = "col";
         let card = document.createElement("div");
@@ -104,8 +105,9 @@ const cardsHome = (array) => {
         <span class="text-dark fw-bold">Price: ${events[i].price}</span>
         <a href="#" class="btn btn-success">Details</a>
         </div>`;
+
+        containerGrid.appendChild(cardContainer);
         cardContainer.appendChild(card);
-        containerHome.appendChild(cardContainer);
       }
     }
   }
