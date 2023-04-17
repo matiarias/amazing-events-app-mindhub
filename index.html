@@ -112,55 +112,8 @@
         <div
           class="w-100 d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center gap-4 gap-lg-0 pb-4"
         >
-          <div class="d-flex flex-wrap gap-4">
-            <div class="form-check">
-              <input
-                class="checkbox-category form-check-input"
-                type="checkbox"
-                value=""
-                id="checkbox-entertainment"
-              />
-              <label class="form-check-label" for="checkbox-entertainment">
-                Entertainment
-              </label>
-            </div>
-
-            <div class="checkbox-category form-check">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="checkbox-education"
-              />
-              <label
-                class="checkbox-category form-check-label"
-                for="checkbox-education"
-              >
-                Education
-              </label>
-            </div>
-
-            <div class="form-check">
-              <input
-                class="checkbox-category form-check-input"
-                type="checkbox"
-                value=""
-                id="checkbox-sports"
-              />
-              <label class="form-check-label" for="checkbox-sports">
-                Sports
-              </label>
-            </div>
-
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="checkbox-food"
-              />
-              <label class="form-check-label" for="checkbox-food"> Food </label>
-            </div>
+          <div id="categories-checks" class="d-flex flex-wrap gap-4">
+            <!-- inputs checkboxs generados dinamicamente con js -->
           </div>
 
           <!-- ---------------- input filtrar -------------- -->
@@ -212,6 +165,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="./main.js"></script>
+    <script type="module" src="./main.js"></script>
   </body>
 </html>
