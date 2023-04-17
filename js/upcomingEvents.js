@@ -23,7 +23,7 @@ const cardsUpcoming = (data) => {
       let cardContainer = document.createElement("div");
       cardContainer.className = "col";
       let card = document.createElement("div");
-      card.className = "card w-100";
+      card.className = "card h-100 w-100";
       card.innerHTML = `<img
         src=${events[i].image}
         class="image-card card-img-top"

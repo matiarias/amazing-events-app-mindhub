@@ -21,7 +21,7 @@
     <header>
       <!--navbar con logo-->
 
-      <nav class="nav navbar navbar-expand-lg fixed-top w-100 p-3">
+      <nav class="nav navbar navbar-expand-lg fixed-top p-3">
         <div class="container-fluid">
           <img
             class="navbar-img logo-header"
@@ -42,46 +42,46 @@
           </button>
 
           <div
-            class="collapse navbar-collapse justify-content-end py-3 py-lg-0"
+            class="collapse navbar-collapse justify-content-end py-4 py-lg-0"
             id="navbarNav"
           >
             <ul class="navbar-nav gap-3">
               <li class="nav-item text-center">
-                <a class="nav-link text-dark fs-5 fw-bold" href="./index.html"
+                <a class="nav-link text-light fs-5 fw-bold" href="./index.html"
                   >Home</a
                 >
               </li>
               <li class="nav-item text-center">
                 <a
-                  class="nav-link text-dark fs-5 fw-bold"
+                  class="nav-link text-light fs-5 fw-bold"
                   href="./pages/upcomingEvents.html"
                   >upcoming events</a
                 >
               </li>
               <li class="nav-item text-center">
                 <a
-                  class="nav-link text-dark fs-5 fw-bold"
+                  class="nav-link text-light fs-5 fw-bold"
                   href="./pages/pastEvents.html"
                   >past events</a
                 >
               </li>
               <li class="nav-item text-center">
                 <a
-                  class="nav-link text-dark fs-5 fw-bold"
+                  class="nav-link text-light fs-5 fw-bold"
                   href="./pages/contact.html"
                   >contact</a
                 >
               </li>
               <li class="nav-item text-center">
                 <a
-                  class="nav-link text-dark fs-5 fw-bold"
+                  class="nav-link text-light fs-5 fw-bold"
                   href="./pages/details.html"
                   >details</a
                 >
               </li>
               <li class="nav-item text-center">
                 <a
-                  class="nav-link text-dark fs-5 fw-bold"
+                  class="nav-link text-light fs-5 fw-bold"
                   href="./pages/stats.html"
                   >stats</a
                 >
@@ -95,18 +95,21 @@
     <!------------------------ main --------------------------->
 
     <main>
-      <!--selector de pagina-->
-      <section class="selector-de-pagina bg-success-subtle py-3">
-        <div
-          class="d-flex flex-row justify-content-between align-items-center px-5"
-        >
-          <a href="#"><i class="fa-solid fa-chevron-left"></i></a>
-          <h1>Home</h1>
-          <a href="#"><i class="fa-solid fa-chevron-right"></i></a>
+      <!------------------------ Hero --------------------------->
+
+      <section class="hero bg-success-subtle">
+        <img
+          class="hero-image"
+          src="./assets/museo-dinosaurios.jpg"
+          alt="museo de dinosaurios"
+        />
+
+        <div class="hero-overlay">
+          <h2 class="overlay-title">Home Events</h2>
         </div>
       </section>
 
-      <!--Filtros y Cards-->
+      <!------------------------ Filtros y Cards -------------------------->
 
       <section class="container px-3 px-md-0 py-5">
         <div
@@ -137,10 +140,10 @@
       <!-- -------------------- footer ----------------- -->
 
       <footer
-        class="container-fluid w-100 d-flex flex-column flex-md-row justify-content-center justify-content-md-between align-items-center gap-3 gap-md-0 px-4"
+        class="container-fluid d-flex flex-column flex-md-row justify-content-center justify-content-md-around align-items-center gap-3"
       >
         <div
-          class="h-100 w-50 d-flex justify-content-center align-items-center gap-4"
+          class="h-100 w-50 d-flex justify-content-center justify-content-md-start align-items-center gap-5"
         >
           <a href="https://www.instagram.com/" target="_blank"
             ><i class="footer-icons fa-brands fa-instagram"></i
