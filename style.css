@@ -67,6 +67,7 @@ body {
 
 .overlay-title {
   font-size: 3rem;
+  font-weight: 700;
   color: #f0ecec;
   text-align: center;
 }
