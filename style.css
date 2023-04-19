@@ -80,6 +80,27 @@ body {
   object-fit: cover;
 }
 
+/* ---------------------- card details ----------------------- */
+
+.card-details span {
+  font-size: 1rem;
+}
+
+.card-details-image {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.title-details {
+  font-size: 2rem;
+  font: 700;
+}
+
+.details-paragraph {
+  font-size: 1.3rem;
+}
+
 /* --------------------------- footer ------------------------- */
 
 footer {

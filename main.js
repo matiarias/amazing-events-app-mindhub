@@ -19,8 +19,8 @@ const dataUrl = "https://mindhub-xj03.onrender.com/api/amazing";
 const fetchData = async () => {
   await fetch(dataUrl)
     .then((response) => response.json())
-    .then((results) => {
-      dataGlob = results;
+    .then((data) => {
+      dataGlob = data;
       // cardsHome("");
       displayCards(dataGlob.events, containerGridHome);
 
