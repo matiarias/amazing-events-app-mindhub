@@ -1,8 +1,12 @@
+// ---------------------- imports -----------------------------
+
+import { displayCards } from "./js/functions.js";
+
+// ------------------------ DOM -----------------------------
+
 let containerGridHome = document.querySelector(".container-grid-home");
 
 let categoriesChecks = document.querySelector("#categories-checks");
-
-let checkboxs = document.querySelectorAll("input[type=checkbox]:checked");
 
 let inputFilter = document.querySelector(".input-filter");
 
@@ -17,7 +21,8 @@ const fetchData = async () => {
     .then((response) => response.json())
     .then((results) => {
       dataGlob = results;
-      cardsHome("");
+      // cardsHome("");
+      displayCards(dataGlob.events, containerGridHome);
 
       let categories = extractCategories(dataGlob.events);
       checks(categories);
@@ -25,7 +30,7 @@ const fetchData = async () => {
     .catch((error) => console.log(error));
 };
 
-// ------------------------- checkbox function -----------------------
+// -------------------- función que maneja los input checkbox --------------------
 
 const extractCategories = (events) => {
   let categories = Array.from(new Set(events.map((item) => item.category)));
@@ -40,68 +45,58 @@ const checks = (categories) => {
     formCheck.innerHTML = `<input
         class="checkbox-category form-check-input"
         type="checkbox"
-        value=""
+        value=${categories[i]}
         id="checkbox-entertainment"
         />
         <label class="form-check-label" for="checkbox-entertainment">
         ${categories[i]}
         </label>`;
+
+    formCheck.addEventListener("change", () => {
+      let checkboxs = document.querySelectorAll("input[type=checkbox]:checked");
+
+      let checkedCategories = Array.from(checkboxs).map(
+        (checkbox) => checkbox.value
+      );
+
+      dobleFilter(checkedCategories);
+    });
     categoriesChecks.appendChild(formCheck);
   }
 };
 
-// -------------------------------- filter function ----------------------------
+// ---- función que hace el doble filtro para filtrar por categoria y por titulo ----
 
-inputFilter.addEventListener("keyup", () => {
-  cardsHome(inputFilter.value.toLowerCase());
-});
+const dobleFilter = (checkedCategories) => {
+  let eventosFiltroInput = dataGlob.events.filter((event) =>
+    event.name.toLowerCase().includes(inputFilter.value.toLowerCase())
+  );
 
-const cardsHome = (filtro) => {
-  let events = [];
+  let eventosFiltradrosCategorie = eventosFiltroInput.filter((event) =>
+    checkedCategories.includes(event.category)
+  );
 
-  if (filtro.length === 0) {
-    events = dataGlob.events;
+  if (checkedCategories.length === 0) {
+    displayCards(eventosFiltroInput, containerGridHome);
   } else {
-    events = dataGlob.events.filter((item) =>
-      item.name.toLowerCase().includes(filtro)
-    );
-    console.log(events);
+    displayCards(eventosFiltradrosCategorie, containerGridHome);
   }
 
-  // -------------------------------- Cards Home ------------------------------
-
-  containerGridHome.innerHTML = "";
-
-  for (let i = 0; i < events.length; i++) {
-    let cardContainer = document.createElement("div");
-
-    cardContainer.className = "col";
-    let card = document.createElement("div");
-    card.className = "card h-100 w-100";
-    card.innerHTML = `<img
-    src=${events[i].image}
-    class="image-card card-img-top"
-    alt="imagen de concierto de musica"
-    />
-    <div class="card-body">
-    <h5 class="card-title text-center">${events[i].name}</h5>
-    <div class="d-flex justify-content-between align-items-center my-2">
-    <span class="badge rounded-pill text-bg-danger p-2">${events[i].category}</span>
-    <span class="badge rounded-pill text-bg-secondary p-2">${events[i].date}</span>
-    </div>
-    <p class="card-text text-center">
-    ${events[i].description}
-    </p>
-    <div class="d-flex justify-content-between align-items-center">
-    <span class="text-dark fw-bold">Price: ${events[i].price}</span>
-      <a href="#" class="btn btn-success">Details</a>
-    </div>`;
-
-    containerGridHome.appendChild(cardContainer);
-    cardContainer.appendChild(card);
-  }
+  // console.log(eventosFiltradros);
 };
 
-// --------------------------------------------------------------------------
+// ------------- función para filtrar por el titulo del evento -------------
+
+inputFilter.addEventListener("keyup", () => {
+  let checkboxs = document.querySelectorAll("input[type=checkbox]:checked");
+
+  let checkedCategories = Array.from(checkboxs).map(
+    (checkbox) => checkbox.value
+  );
+
+  dobleFilter(checkedCategories);
+});
+
+// -----------------------------------------------------------------------------
 
 fetchData();
