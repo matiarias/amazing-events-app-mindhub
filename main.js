@@ -21,7 +21,6 @@ const fetchData = async () => {
     .then((response) => response.json())
     .then((data) => {
       dataGlob = data;
-      // cardsHome("");
       displayCards(dataGlob.events, containerGridHome);
 
       let categories = extractCategories(dataGlob.events);

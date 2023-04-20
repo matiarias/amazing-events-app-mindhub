@@ -49,7 +49,7 @@ export function detailsCard(event, container) {
 
   <div class="col-12 col-md-6">
     <div class="card-body">
-      <h5 class="card-title title-details">${event.name}</h5>
+      <h5 class="card-title details-title">${event.name}</h5>
 
       <div class="d-flex justify-content-between align-items-center my-2">
       <span class="badge rounded-pill text-bg-danger p-2">${event.category}</span>

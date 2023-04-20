@@ -14,7 +14,7 @@ body {
   min-height: 100vh;
   width: 100%;
   font-family: "Roboto Mono", monospace;
-  background: linear-gradient(to right, #bcd6bc, #95b495);
+  background: linear-gradient(to right, #bcd6bc, #758860);
 }
 
 /*----------------------------- Navbar ----------------------------- */
@@ -82,17 +82,13 @@ body {
 
 /* ---------------------- card details ----------------------- */
 
-.card-details span {
-  font-size: 1rem;
-}
-
 .card-details-image {
   height: 400px;
   width: 100%;
   object-fit: cover;
 }
 
-.title-details {
+.details-title {
   font-size: 2rem;
   font: 700;
 }

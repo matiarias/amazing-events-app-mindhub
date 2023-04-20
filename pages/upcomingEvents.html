@@ -23,11 +23,13 @@
 
       <nav class="nav navbar navbar-expand-lg fixed-top w-100 p-3">
         <div class="container-fluid">
-          <img
-            class="navbar-img logo-header"
-            src="../assets/Logo Amazing Events.png"
-            alt="imagen de la luna en el universo"
-          />
+          <a href="../index.html">
+            <img
+              class="navbar-img logo-header"
+              src="../assets/Logo Amazing Events.png"
+              alt="imagen de la luna en el universo"
+            />
+          </a>
 
           <button
             class="navbar-toggler"
@@ -73,13 +75,6 @@
                 >
               </li>
               <li class="nav-item text-center">
-                <a
-                  class="nav-link text-light fs-5 fw-bold"
-                  href="./details.html"
-                  >details</a
-                >
-              </li>
-              <li class="nav-item text-center">
                 <a class="nav-link text-light fs-5 fw-bold" href="./stats.html"
                   >stats</a
                 >
@@ -113,58 +108,13 @@
         <div
           class="w-100 d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center gap-4 gap-lg-0 pb-4"
         >
-          <div class="d-flex flex-wrap gap-4">
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="flexCheckDefault"
-              />
-              <label class="form-check-label" for="flexCheckDefault">
-                Category
-              </label>
-            </div>
-
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="flexCheckDefault"
-              />
-              <label class="form-check-label" for="flexCheckDefault">
-                Category
-              </label>
-            </div>
-
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="flexCheckDefault"
-              />
-              <label class="form-check-label" for="flexCheckDefault">
-                Category
-              </label>
-            </div>
-
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="flexCheckDefault"
-              />
-              <label class="form-check-label" for="flexCheckDefault">
-                Category
-              </label>
-            </div>
+          <div id="categories-checks-upcoming" class="d-flex flex-wrap gap-4">
+            <!-- inputs checkboxs generados dinamicamente con js -->
           </div>
 
           <input
             type="text"
+            value=""
             class="form-control w-50"
             id="exampleFormControlInput1"
             placeholder="search"

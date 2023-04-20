@@ -23,11 +23,13 @@
 
       <nav class="nav navbar navbar-expand-lg fixed-top w-100 p-3">
         <div class="container-fluid">
-          <img
-            class="navbar-img logo-header"
-            src="../assets/Logo Amazing Events.png"
-            alt="imagen de la luna en el universo"
-          />
+          <a href="../index.html">
+            <img
+              class="navbar-img logo-header"
+              src="../assets/Logo Amazing Events.png"
+              alt="imagen de la luna en el universo"
+            />
+          </a>
 
           <button
             class="navbar-toggler"
@@ -73,13 +75,6 @@
                 >
               </li>
               <li class="nav-item text-center">
-                <a
-                  class="nav-link text-light fs-5 fw-bold"
-                  href="./details.html"
-                  >details</a
-                >
-              </li>
-              <li class="nav-item text-center">
                 <a class="nav-link text-light fs-5 fw-bold" href="./stats.html"
                   >stats</a
                 >
@@ -100,98 +95,11 @@
 
       <!-------------------------- table --------------------->
 
-      <section class="container py-4">
-        <table class="table table-bordered border-success">
-          <caption class="text-center">
-            event statistics
-          </caption>
-          <thead>
-            <tr>
-              <th>event with the highest percentage of attendance</th>
-              <th>Events with the lowest percentage of attendance</th>
-              <th>Event with larger capacity</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td colspan="4">
-                <table class="table table-bordered mb-0">
-                  <caption>
-                    Upcoming events statistics by category
-                  </caption>
-                  <thead>
-                    <tr>
-                      <th>Categories</th>
-                      <th>Revenues</th>
-                      <th>Percentage of attendance</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                  </tbody>
-                </table>
-                <table id="mainTable" class="table table-bordered mb-0 px-5">
-                  <caption>
-                    Past Events statistic by category
-                  </caption>
-                  <thead>
-                    <tr>
-                      <th>Categories</th>
-                      <th>Revenues</th>
-                      <th>Percentage of attendance</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <section
+        id="container-tables"
+        class="container d-flex flex-column justify-content-center align-items-center gap-3 py-4 px-2"
+      >
+        <!-- --------------- tablas generadas dinamicamente con js ---------------- -->
       </section>
     </main>
 
@@ -224,5 +132,7 @@
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"
     ></script>
+
+    <script type="module" src="../js/stats.js"></script>
   </body>
 </html>
