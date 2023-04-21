@@ -1,6 +1,6 @@
 // ---------------------- imports -----------------------------
 
-import { displayCards } from "./functions.js";
+import { displayCards, displayMessage, emptyMessage } from "./functions.js";
 
 // ------------------------ DOM -----------------------------
 
@@ -11,6 +11,8 @@ let categoriesChecksUpcoming = document.querySelector(
 );
 
 let inputFilter = document.querySelector(".input-filter");
+
+let containerMessage = document.querySelector("#container-message");
 
 // ---------------------------- fetch data ----------------------------------
 
@@ -91,6 +93,13 @@ const dobleFilter = (checkedCategories) => {
   let eventosFiltradrosCategories = eventosFiltroInput.filter((event) =>
     checkedCategories.includes(event.category)
   );
+
+  if (!eventosFiltroInput.length) {
+    // console.log("no hay resultados");
+    displayMessage(containerMessage);
+  } else {
+    emptyMessage(containerMessage);
+  }
 
   if (checkedCategories.length === 0) {
     displayCards(eventosFiltroInput, containerGridUpcoming);

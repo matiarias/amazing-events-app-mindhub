@@ -1,6 +1,6 @@
 // ---------------------- imports -----------------------------
 
-import { displayCards, displayMessage } from "./js/functions.js";
+import { displayCards, displayMessage, emptyMessage } from "./js/functions.js";
 
 // ------------------------ DOM -----------------------------
 
@@ -80,6 +80,8 @@ const dobleFilter = (checkedCategories) => {
   if (!eventosFiltroInput.length) {
     // console.log("no hay resultados");
     displayMessage(containerMessage);
+  } else {
+    emptyMessage(containerMessage);
   }
 
   if (checkedCategories.length === 0) {
