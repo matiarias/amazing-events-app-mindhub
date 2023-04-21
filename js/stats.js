@@ -122,7 +122,7 @@ const infoPastEventsByCats = infoPastEventsBycategories(
   categoriesPastEvents,
   pastData
 );
-console.log(infoPastEventsByCats);
+// console.log(infoPastEventsByCats);
 
 // -------------- ingresos y concurrencia por categorias de eventos futuros ----------
 
@@ -154,7 +154,7 @@ const infoUpcomingEventsByCats = infoUpcomingEventsBycategories(
   upcomingData
 );
 
-console.log(infoUpcomingEventsByCats);
+// console.log(infoUpcomingEventsByCats);
 
 // ----------------------- table events stats -----------------------
 
@@ -208,6 +208,7 @@ for (const event of infoPastEventsByCats) {
     <td>${event.attendance.toFixed(2)} %</td>`;
   tbodyTablePast.appendChild(tr);
 }
+
 tablePast.appendChild(tbodyTablePast);
 
 // ------------------------ table upcoming events stats --------------------------
@@ -238,6 +239,7 @@ for (const event of infoUpcomingEventsByCats) {
       <td>${event.attendance.toFixed(2)} %</td>`;
   tbodyTableUpcoming.appendChild(tr);
 }
+
 tableUpcoming.appendChild(tbodyTableUpcoming);
 
 containerTables.append(table, tablePast, tableUpcoming);

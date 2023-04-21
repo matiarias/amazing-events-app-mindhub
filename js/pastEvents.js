@@ -1,50 +1,114 @@
+// ---------------------- imports -----------------------------
+
+import { displayCards } from "./functions.js";
+
+// ------------------------ DOM -----------------------------
+
 let containerGridPast = document.querySelector(".container-grid-past");
+
+let categoriesChecksPast = document.querySelector("#categories-checks-past");
+
+let inputFilter = document.querySelector(".input-filter");
+
+// ---------------------------- fetch data ----------------------------------
 
 const dataUrl = "https://mindhub-xj03.onrender.com/api/amazing";
 
-fetch(dataUrl)
-  .then((response) => response.json())
-  .then((results) => {
-    cardsPastEvents(results);
-    // console.log(results);
-  })
-  .catch((error) => console.log(error));
+const fetchData = async () => {
+  let result = await fetch(dataUrl)
+    .then((response) => response.json())
+    .then((data) => {
+      return data;
+    })
+    .catch((error) => console.log(error));
 
-//   -------------------------------------------------------------------
+  return result;
+};
 
-const cardsPastEvents = (data) => {
-  const events = data.events;
-  const currentDate = data.currentDate;
+// ------ utilizo esta constante para poder acceder a toda la data globalmente --------
 
-  //   console.log(currentDate);
+const dataPast = await fetchData();
 
-  for (let i = 0; i < events.length; i++) {
-    if (currentDate > events[i].date) {
-      let cardContainer = document.createElement("div");
-      cardContainer.className = "col";
-      let card = document.createElement("div");
-      card.className = "card h-100 w-100";
-      card.innerHTML = `<img
-        src=${events[i].image}
-        class="image-card card-img-top"
-        alt="imagen de concierto de musica"
+// ---------- función que filtra los eventos pasados al currentDate -----------
+
+let dataPastEvents = dataPast.events.filter(
+  (event) => event.date <= dataPast.currentDate
+);
+
+// ----------------- functión que pinta las cards ----------------
+
+displayCards(dataPastEvents, containerGridPast);
+
+// -------------------- función que maneja los input checkbox --------------------
+
+const extractCategories = (events) => {
+  let categories = Array.from(new Set(events.map((item) => item.category)));
+
+  return categories;
+};
+
+const checks = (categories) => {
+  for (let i = 0; i < categories.length; i++) {
+    let formCheck = document.createElement("div");
+    formCheck.className = "form-check";
+    formCheck.innerHTML = `<input
+        class="checkbox-category form-check-input"
+        type="checkbox"
+        value=${categories[i]}
+        id="checkbox-entertainment"
         />
-        <div class="card-body">
-        <h5 class="card-title text-center">${events[i].name}</h5>
-        <div class="d-flex justify-content-between align-items-center my-2">
-        <span class="badge rounded-pill text-bg-danger p-2">${events[i].category}</span>
-        <span class="badge rounded-pill text-bg-secondary p-2">${events[i].date}</span>
-        </div>
-        <p class="card-text text-center">
-        ${events[i].description}
-        </p>
-        <div class="d-flex justify-content-between align-items-center">
-        <span class="text-dark fw-bold">Price: ${events[i].price}</span>
-        <a href="#" class="btn btn-success">Details</a>
-        </div>`;
+        <label class="form-check-label" for="checkbox-entertainment">
+        ${categories[i]}
+        </label>`;
 
-      containerGridPast.appendChild(cardContainer);
-      cardContainer.appendChild(card);
-    }
+    formCheck.addEventListener("change", () => {
+      let checkboxs = document.querySelectorAll("input[type=checkbox]:checked");
+
+      let checkedCategories = Array.from(checkboxs).map(
+        (checkbox) => checkbox.value
+      );
+
+      dobleFilter(checkedCategories);
+    });
+    categoriesChecksPast.appendChild(formCheck);
   }
 };
+
+// ------- funcion que pinta los input checkboxs de categorias -----------------
+
+let categories = extractCategories(dataPastEvents);
+checks(categories);
+
+// ---- función que hace el doble filtro para filtrar por categoria y por titulo ----
+
+const dobleFilter = (checkedCategories) => {
+  let eventosFiltroInput = dataPastEvents.filter((event) =>
+    event.name.toLowerCase().includes(inputFilter.value.toLowerCase())
+  );
+
+  let eventosFiltradrosCategories = eventosFiltroInput.filter((event) =>
+    checkedCategories.includes(event.category)
+  );
+
+  if (checkedCategories.length === 0) {
+    displayCards(eventosFiltroInput, containerGridPast);
+  } else {
+    displayCards(eventosFiltradrosCategories, containerGridPast);
+  }
+
+  // console.log(eventosFiltradros);
+};
+
+// ------------- función para filtrar por el titulo del evento -------------
+
+inputFilter.addEventListener("keyup", () => {
+  let checkboxs = document.querySelectorAll("input[type=checkbox]:checked");
+
+  let checkedCategories = Array.from(checkboxs).map(
+    (checkbox) => checkbox.value
+  );
+
+  dobleFilter(checkedCategories);
+});
+
+// -----------------------------------------------------------------------------
