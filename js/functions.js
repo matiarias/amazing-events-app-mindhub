@@ -69,3 +69,12 @@ export function detailsCard(event, container) {
 
   container.appendChild(card);
 }
+
+// --------------- función que muestra mensaje de error al buscar filtros -------------
+
+export function displayMessage(contenedor) {
+  let message = document.createElement("h3");
+  message.className = "text-dark text-center";
+  message.innerText = "No se encontrarón resultados";
+  contenedor.appendChild(message);
+}

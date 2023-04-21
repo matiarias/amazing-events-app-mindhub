@@ -1,6 +1,6 @@
 // ---------------------- imports -----------------------------
 
-import { displayCards } from "./js/functions.js";
+import { displayCards, displayMessage } from "./js/functions.js";
 
 // ------------------------ DOM -----------------------------
 
@@ -9,6 +9,8 @@ let containerGridHome = document.querySelector(".container-grid-home");
 let categoriesChecks = document.querySelector("#categories-checks");
 
 let inputFilter = document.querySelector(".input-filter");
+
+let containerMessage = document.querySelector("#container-message");
 
 // ---------------------------- fetch data ----------------------------------
 
@@ -71,14 +73,19 @@ const dobleFilter = (checkedCategories) => {
     event.name.toLowerCase().includes(inputFilter.value.toLowerCase())
   );
 
-  let eventosFiltradrosCategorie = eventosFiltroInput.filter((event) =>
+  let eventosFiltradrosCategories = eventosFiltroInput.filter((event) =>
     checkedCategories.includes(event.category)
   );
+
+  if (!eventosFiltroInput.length) {
+    // console.log("no hay resultados");
+    displayMessage(containerMessage);
+  }
 
   if (checkedCategories.length === 0) {
     displayCards(eventosFiltroInput, containerGridHome);
   } else {
-    displayCards(eventosFiltradrosCategorie, containerGridHome);
+    displayCards(eventosFiltradrosCategories, containerGridHome);
   }
 
   // console.log(eventosFiltradros);
