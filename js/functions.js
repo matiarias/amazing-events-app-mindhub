@@ -8,7 +8,7 @@ export function displayCards(events, container) {
 
     cardContainer.className = "col";
     let card = document.createElement("div");
-    card.className = "card h-100 w-100";
+    card.className = "principal-cards card h-100 w-100";
     card.innerHTML = `<img
       src=${events[i].image}
       class="image-card card-img-top"
@@ -24,7 +24,7 @@ export function displayCards(events, container) {
       ${events[i].description}
       </p>
       <div class="d-flex justify-content-between align-items-center">
-      <span class="text-dark fw-bold">Price: ${events[i].price}</span>
+      <span class="text-dark fw-bold">Price: $${events[i].price}</span>
         <a href="../pages/details.html?id=${events[i]._id}" class="btn btn-success">Details</a>
       </div>`;
 

@@ -10,7 +10,6 @@
 /* ----------------------------- Body ---------------------------- */
 
 body {
-  padding-top: 72px;
   min-height: 100vh;
   width: 100%;
   font-family: "Roboto Mono", monospace;
@@ -106,16 +105,9 @@ footer {
   background: linear-gradient(to right, #000000, #143514, #218021);
 }
 
-footer span {
-  font-size: 1.2rem;
-  font-weight: 700;
-  text-align: center;
-  color: #fff;
-}
-
 .footer-icons {
   font-size: 1.8rem;
-  color: #fff;
+  color: #dfdfdf;
 }
 
 .footer-title {
@@ -127,12 +119,218 @@ footer span {
 
 .footer-title a:nth-child(1) {
   font-size: 1.6rem;
-  color: #ebee5d;
+  color: #ccecad;
 }
 
 .footer-title a:nth-child(2) {
   font-size: 1.6rem;
-  color: #eb9292;
+  color: #b85555;
+}
+
+/* -------------------------- pagina de stats ----------------- */
+
+#body-stats {
+  min-height: 100vh;
 }
 
 /* ------------------------- media queries ----------------------- */
+
+@media screen and (max-width: 576px) {
+  /* ---------------- navbar ------------------- */
+
+  .logo-header {
+    height: 30px;
+  }
+
+  /* -------------------------- hero ------------------------ */
+
+  .hero {
+    height: 100vh;
+  }
+
+  .overlay-title {
+    font-size: 2.3rem;
+  }
+
+  /* ---------------------- card details ----------------------- */
+
+  .card-details-image {
+    height: 250px;
+  }
+
+  .card-details span {
+    font-size: 0.9rem;
+  }
+
+  .details-title {
+    font-size: 1.5rem;
+  }
+
+  .details-paragraph {
+    font-size: 1rem;
+  }
+
+  /* --------------- footer -------------- */
+
+  .footer-icons {
+    font-size: 1.7rem;
+  }
+
+  .footer-title {
+    font-size: 1.1rem;
+  }
+
+  .footer-title a:nth-child(1) {
+    font-size: 1.5rem;
+  }
+
+  .footer-title a:nth-child(2) {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  /* ---------------- navbar ------------------- */
+
+  .logo-header {
+    height: 35px;
+  }
+
+  /* -------------------------- hero ------------------------ */
+
+  .hero {
+    height: 100vh;
+  }
+
+  .overlay-title {
+    font-size: 2.5rem;
+  }
+
+  /* ---------------------- card details ----------------------- */
+
+  .card-details-image {
+    height: 300px;
+  }
+
+  .card-details span {
+    font-size: 0.9rem;
+  }
+
+  .details-title {
+    font-size: 1.6rem;
+  }
+
+  .details-paragraph {
+    font-size: 1.1rem;
+  }
+
+  /* --------------- footer -------------- */
+
+  .footer-icons {
+    font-size: 1.7rem;
+  }
+
+  .footer-title {
+    font-size: 1.2rem;
+  }
+
+  .footer-title a:nth-child(1) {
+    font-size: 1.5rem;
+  }
+
+  .footer-title a:nth-child(2) {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  /* ---------------- navbar ------------------- */
+
+  .logo-header {
+    height: 50px;
+  }
+
+  /* -------------------------- hero ------------------------ */
+
+  .hero {
+    height: 80vh;
+  }
+
+  .overlay-title {
+    font-size: 4rem;
+  }
+
+  /* -------------- principal cards ---------------- */
+
+  .principal-cards h5 {
+    font-size: 2rem;
+  }
+
+  .principal-cards img {
+    height: 300px;
+  }
+
+  .principal-cards p {
+    font-size: 1.3rem;
+  }
+
+  .principal-cards span {
+    font-size: 1.1rem;
+  }
+
+  /* ---------------------- card details ----------------------- */
+
+  .card-details-image {
+    height: 400px;
+  }
+
+  .card-details span {
+    font-size: 1rem;
+  }
+
+  .details-title {
+    font-size: 2rem;
+  }
+
+  .details-paragraph {
+    font-size: 1.5rem;
+  }
+
+  /* --------------- inputs text y checkbox -------------- */
+
+  .input-filter {
+    padding: 0.8rem;
+  }
+
+  .checkbox-category {
+    font-size: 1.3rem;
+  }
+
+  .form-check-label {
+    font-size: 1.3rem;
+  }
+
+  /* -------------------- table ------------------- */
+
+  caption {
+    font-size: 1.3rem;
+  }
+
+  /* --------------- footer -------------- */
+
+  .footer-icons {
+    font-size: 2.2rem;
+  }
+
+  .footer-title {
+    font-size: 1.8rem;
+  }
+
+  .footer-title a:nth-child(1) {
+    font-size: 2rem;
+  }
+
+  .footer-title a:nth-child(2) {
+    font-size: 2rem;
+  }
+}
