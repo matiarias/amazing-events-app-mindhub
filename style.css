@@ -100,18 +100,39 @@ body {
 /* --------------------------- footer ------------------------- */
 
 footer {
-  height: 100px;
+  height: auto;
   width: 100%;
-  background: linear-gradient(to right, #386158, #338d33, #b98c39);
+  padding: 1rem 0;
+  background: linear-gradient(to right, #000000, #143514, #218021);
+}
+
+footer span {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
 }
 
 .footer-icons {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #fff;
 }
 
 .footer-title {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 700;
+  text-align: center;
   color: #fff;
 }
+
+.footer-title a:nth-child(1) {
+  font-size: 1.6rem;
+  color: #ebee5d;
+}
+
+.footer-title a:nth-child(2) {
+  font-size: 1.6rem;
+  color: #eb9292;
+}
+
+/* ------------------------- media queries ----------------------- */
